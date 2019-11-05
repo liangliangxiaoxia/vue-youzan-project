@@ -5,7 +5,7 @@ export function fetch(api, callback) {
     // 显示加载中
     axios({
         method: "GET",
-        url: constant.baseUrl + api,
+        // url: constant.baseUrl + api,
         headers: {
             token: JSON.parse(res).token  // token传递给后端
         }
