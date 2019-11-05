@@ -1,15 +1,20 @@
 <template>
     <div class="order">
-        订单
         <LeftNav></LeftNav>
+        <OrderCenter></OrderCenter>
+        <OrderRight></OrderRight>
     </div>
 </template>
 
 <script>
 import LeftNav from '@/components/LeftNav.vue'
+import OrderCenter from './OrderCenter.vue'
+import OrderRight from './OrderRight'
 export default {
     components:{
-        LeftNav
+        LeftNav,
+        OrderCenter,
+        OrderRight
     }
 }
 </script>
