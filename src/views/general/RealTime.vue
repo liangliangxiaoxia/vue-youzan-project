@@ -19,10 +19,12 @@
 
     <div class="zent-layout-grid">
       <div class="left">
-          <RealFrom></RealFrom>
+          <RealFrom :item="realtimeArr[0]"></RealFrom>
       </div>
 
-      <div class="right"></div>
+      <div class="right">
+          <RealFrom :item="realtimeArr[1]"></RealFrom>  
+      </div>
     </div>
   </div>
 </template>
@@ -34,15 +36,16 @@ export default {
     components:{
         RealFrom,
     },
-    mounted(){
-        this.getRealtime()
-    },
     computed:{
         ...mapState(['realtimeArr'])
     },
     methods:{
         ...mapActions(['getRealtime'])
-    }
+    },
+    mounted(){
+        this.getRealtime()
+        console.log(this.realtimeArr)
+    },
 };
 </script>
 
@@ -52,6 +55,7 @@ export default {
   height: 283px;
   background: #fff;
   padding: 20px 20px;
+  overflow:hidden;
   .real_title {
     margin-bottom: 20px;
     overflow: auto;
@@ -87,6 +91,15 @@ export default {
      .left{
          width:458px;
          height:200px;
+         float:left;
+         padding-right:56px;
+     }
+     .right{
+         width:458px;
+         height:200px;
+         float:right;
+         padding-left:56px;
+         border-left:1px solid #e5e5e5;
      }
   }
 }

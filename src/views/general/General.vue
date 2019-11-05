@@ -8,6 +8,8 @@
     <div class="main">
       <!-- 实时概况 -->
       <RealTime></RealTime>
+      <!-- 智能助手 -->
+      <Mind></Mind>
     </div>
   </div>
 </template>
@@ -16,11 +18,13 @@
 import LeftNav from "@/components/LeftNav.vue";
 import GeneralHeader from "./GeneralHeader";
 import RealTime from "./RealTime";
+import Mind from "./Mind";
 export default {
   components: {
     LeftNav,
     GeneralHeader,
-    RealTime
+    RealTime,
+    Mind
   }
 };
 </script>
