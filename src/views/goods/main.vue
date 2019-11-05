@@ -13,7 +13,7 @@
         </el-col>
       </el-row>-->
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="销售中" name="first" >销售中</el-tab-pane>
+        <el-tab-pane label="销售中" name="first">销售中</el-tab-pane>
         <el-tab-pane label="已售罄" name="second">已售罄</el-tab-pane>
         <el-tab-pane label="仓库中" name="third">仓库中</el-tab-pane>
       </el-tabs>
@@ -123,8 +123,82 @@
       </el-col>
     </el-row>
 
-    <div>
-        
+    <div class="sort">
+      <el-row :gutter="20">
+        <el-col :span="1" :offset="1">
+          <input type="checkbox" name id />
+        </el-col>
+        <el-col :span="2">
+          <span>商品</span>
+        </el-col>
+        <el-col :span="2">
+          <span>价格</span>
+          <span class="el-icon-d-caret"></span>
+        </el-col>
+        <el-col :span="2">
+          <span>访问量</span>
+        </el-col>
+        <el-col :span="2">
+          <span>库存</span>
+          <span class="el-icon-d-caret"></span>
+        </el-col>
+        <el-col :span="2">
+          <span>总销量</span>
+          <span class="el-icon-d-caret"></span>
+        </el-col>
+        <el-col :span="2">
+          <span>创建时间</span>
+          <span class="el-icon-d-caret"></span>
+        </el-col>
+        <el-col :span="2">
+          <span>序号</span>
+          <span class="el-icon-d-caret"></span>
+        </el-col>
+        <el-col :span="2" :offset="3">
+          <span>操作</span>
+        </el-col>
+      </el-row>
+
+      <div class="dataArr">
+        <div class="no_data">没有更多数据了</div>
+      </div>
+    </div>
+
+    <!-- 分页 -->
+    <div class="paging">
+      <el-row :gutter="20">
+        <el-col :span="1" :offset="1">
+          <input type="checkbox" /> &nbsp;
+        </el-col>
+        <el-col :span="2">
+          <span>当页选项</span>
+        </el-col>
+        <el-col :span="2">
+          <span>改分组</span>
+        </el-col>
+        <el-col :span="2">
+          <span>下架</span>
+        </el-col>
+        <el-col :span="2">
+          <span>删除</span>
+        </el-col>
+        <el-col :span="2">
+          <span>批量设置</span>
+        </el-col>
+        <el-col :span="11" :offset="1">
+          <div class="block">
+          <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage4"
+            :page-sizes="[100, 200, 300, 400]"
+            :page-size="100"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="400"
+          ></el-pagination>
+          </div>
+        </el-col>
+      </el-row>
     </div>
   </div>
 </template>
@@ -133,6 +207,10 @@
 export default {
   data() {
     return {
+      currentPage1: 5,
+      currentPage2: 5,
+      currentPage3: 5,
+      currentPage4: 4,
       Commodity_Group: [
         {
           label: "全部"
@@ -197,6 +275,12 @@ export default {
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
     }
   }
 };
@@ -206,7 +290,7 @@ export default {
 .Main {
   margin: 20px 20px;
   background: rgb(247, 248, 250);
-  height: 600px;
+  height: 100%;
   font-size: 14px;
   .main-Nav {
     height: 48px;
@@ -263,6 +347,31 @@ export default {
       display: inline-block;
       color: rgb(80, 141, 217);
       height: 32px;
+    }
+  }
+  .sort {
+    // height: 56px;
+    text-align: center;
+    line-height: 56px;
+    .no_data {
+      height: 56px;
+      background: #fff;
+    }
+  }
+  .paging {
+    height: 80px;
+    padding-top: 20px;
+    text-align: center;
+    span {
+      height: 32px;
+      line-height: 32px;
+      border: 1px solid #ccc;
+      width: 80px;
+      display: inline-block;
+      text-align: center;
+    }
+    input {
+      margin-top: 10px;
     }
   }
 }
