@@ -25,7 +25,7 @@
           </form>
         </div>
       <div class="order_nav">
-            <OrderNav></OrderNav>
+            <OrderNav ></OrderNav>
       </div>
       </div>
     </section>
@@ -38,10 +38,20 @@
 <script>
 import DrowBtn from './DrowBtn.vue'
 import OrderNav from './OrderNav.vue'
+import { mapActions } from 'vuex'
 export default {
     components:{
         DrowBtn,
         OrderNav
+    },
+    computed:{
+        
+    },
+    mounted (){
+        this.getorderdetails()
+    },
+    methods:{
+      ...mapActions(['getorderdetails'])
     }
    
 };

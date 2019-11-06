@@ -35,6 +35,8 @@ export default {};
 
 <style scoped lang="scss">
 .order_center {
+  background: #fff;
+  z-index: 999999;
   position: fixed;
   top: 0;
   bottom: 0;

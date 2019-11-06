@@ -5,9 +5,9 @@ export function fetch(api, callback) {
     // 显示加载中
     axios({
         method: "GET",
-        url: constant.baseUrl + api,
+        url: 'http://localhost:8080' + api,
         headers: {
-            token: JSON.parse(res).token  // token传递给后端
+            token: JSON.parse(res).token // token传递给后端
         }
     }).then(res => {
         let data = null
@@ -22,3 +22,21 @@ export function fetch(api, callback) {
         // 隐藏加载中
     })
 }
+
+// export function pageChage(page, limit, type,orderArr) {
+//     orderArr[1,2,3,4,5,6,7,8,9]  //每页5条  =>limit
+//     orderArr.splice(0,limit)
+//     switch (page,type) {
+//         case "next":
+//             page++
+
+//             break;
+//         case "prev":
+//             page--;
+
+//             break;
+
+//         default:
+//             break;
+//     }
+// }

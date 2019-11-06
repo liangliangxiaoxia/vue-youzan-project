@@ -4,10 +4,10 @@
     <el-row type="flex" class="row-bg" align="middle" >
   <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单搜索:</span> <el-select v-model="value" placeholder="请选择"  style="width:184px;height:32px;margin-left:10px;padding-right:10px;">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.OrderSearch"
       :key="item.value"
       :label="item.label"
-      :value="item.value">
+      :value="item.value1">
     </el-option>
   </el-select></div></el-col>
   <el-col :span="5"><div class="grid-content bg-purple"><el-input v-model="input"></el-input></div></el-col>
@@ -43,7 +43,7 @@
 <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">商品名称:</span> <el-input style="width:184px;height:32px;margin-left:10px;padding-right:10px" v-model="input" placeholder="请输入"></el-input></div></el-col>
 <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单类型:</span> <el-select v-model="value" placeholder="请选择">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.OrderType"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -51,7 +51,7 @@
   </el-select></div></el-col>
  <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">维权状态:</span> <el-select v-model="value" placeholder="请选择">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.activistState"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -64,7 +64,7 @@
 <el-row type="flex" class="row-bg" >
 <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单状态:</span> <el-select v-model="value" placeholder="请选择" style="width:184px;height:32px;margin-left:10px;padding-right:10px">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.OrderStatus"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -72,7 +72,7 @@
   </el-select></div></el-col>
  <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">配送方式:</span> <el-select v-model="value" placeholder="请选择">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.distribution"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -80,7 +80,7 @@
   </el-select></div></el-col>
      <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">付款方式:</span> <el-select v-model="value" placeholder="请选择">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.paymentWay"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -92,7 +92,7 @@
 <el-row type="flex" class="row-bg" >
 <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单来源:</span> <el-select v-model="value" placeholder="请选择" style="width:184px;height:32px;margin-left:10px;padding-right:10px">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.orderSource"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -100,7 +100,7 @@
   </el-select></div></el-col>
  <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">是否加星:</span> <el-select v-model="value" placeholder="请选择">
     <el-option
-      v-for="item in options"
+      v-for="item in orders.addstar"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -126,26 +126,12 @@
 </template>
 
 <script>
+import { orders } from '@/assets/index'
 export default {
   data: function() {
     return {
-      options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
-        }, {
-          value: '选项4',
-          label: '龙须面'
-        }, {
-          value: '选项5',
-          label: '北京烤鸭'
-        }],
-        value: '',
+      orders,
+        value:'',
       //时间
        pickerOptions: {
           shortcuts: [{

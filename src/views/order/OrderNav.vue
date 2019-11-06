@@ -12,52 +12,78 @@
   </el-tabs>
     </div>
 
-    <div class="fixd_bar">
-      <div>
-        <li>商品</li>
-        <div class="fixd_bar_right">
-          <li>单价(元) / 数量</li>
-          <li>售后</li>
-          <li>买家 / 收货人</li>
-          <li>配送方式</li>
-          <li>实收金额(元)</li>
-          <li>订单状态</li>
-        </div>
-        <li>操作</li>
-      </div>
-    </div>
 
     <div class="order_list">
-      <div class="order_list_center"></div>
+      <div class="order_list_center">
+       <el-table 
+    :data="ordersArr2" 
+    style="width: 100%" height="350px"
+    >
+    <el-table-column 
+      prop="name"
+      label="商品"
+      width="150">
+    </el-table-column>
+    <el-table-column align="right"
+      prop="price"
+      label="单价(元) / 数量"
+      width="350">
+    </el-table-column>
+    <el-table-column align="center"
+      prop="afterSales"
+      label="售后"
+      width="120">
+    </el-table-column>
+    <el-table-column align="center"
+      prop="customer"
+      label="买家 / 收货人"
+      width="120">
+    </el-table-column>
+    <el-table-column align="center"
+      prop="Indistribution"
+      label="配送方式"
+      width="120">
+    </el-table-column>
+    <el-table-column align="center"
+      prop="inventory"
+      label="实收金额(元)"
+      width="120">
+    </el-table-column>
+    <el-table-column align="right"
+      prop="orderState"
+      label="订单状态"
+      width="120">
+    </el-table-column>
+    <el-table-column align="right"
+      fixed="right"
+      label="操作"
+      width="120">
+      <template slot-scope="scope">
+        <el-button
+          @click.native.prevent="deleteRow(scope.$index, tableData)"
+          type="text"
+          size="small">
+          删除
+        </el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+
+      </div>
     </div>
 
     <div class="order_pages">
-      <div class="order_pages_one">
-        共
-        <span>0</span>条,每页
-        <el-select v-model="value" placeholder="请选择" style="width:80px;height:100%,font-size:14px" size="small">
-          <el-option style="width:80px;height:20px" 
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </div>
-      <div class="order_pages_two">
-        <button type="button">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button type="button">
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div class="order_pages_three">
-        跳至
-        <div >
-          <input type="text" style="width:54px;height30px;padding:0 12px 0 12px;"/>
-        </div>页
-      </div>
+      <div class="block">
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage4"
+      :page-sizes="[5, 10, 15, 20]"
+      :page-size="5"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="(ordersArr2.length)+1">
+    </el-pagination>
+  </div>
     </div>
 
 
@@ -69,9 +95,11 @@
 </template>
 
 <script>
+import { mapState,mapMutations } from 'vuex'
 export default {
   data() {
       return {
+
         options: [{
           value: '选项1',
           label: '第一页'
@@ -89,13 +117,63 @@ export default {
           label: '第五页'
         }],
         value: '',
-         activeName: 'first'
+         activeName: 'first',
+         tableData: [],
+         currentPage1: 5,
+        currentPage2: 5,
+        currentPage3: 5,
+        currentPage4: 1
       };
     },
+    mounted(){
+
+    },
+    computed:{
+      ...mapState(['ordersArr2'])
+    },
     methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
-      }
+      handleClick(tab) {
+        switch (tab.name) {
+          case "first":
+            this.updataOrderArr({page:5})
+            break;
+            case "second":
+              this.ordersArr2.map((ele,idx)=>{
+               
+                if(ele.orderState === "代付款"){
+                  console.log(idx)
+                  this.ordersArr2.slice(idx,1)
+                }
+                
+              })
+              console.log(this.ordersArr2)
+            
+            break;
+            
+        
+          default:
+            break;
+        }
+       
+      },
+       deleteRow(index, rows) {
+         rows=this.tableData=this.ordersArr2
+        rows.splice(index, 1);
+      },
+      // 每页多少条
+      handleSizeChange(val) {
+        let page = val
+        console.log(`每页 ${val} 条`);
+        this.updataOrderArr({page:page})
+      },
+      // 页码
+      handleCurrentChange(val) {
+        let page = val
+        this.updatapagechage({page:page})
+        console.log(`当前页: ${val}`);
+      },
+      ...mapMutations(['updataOrderArr','updatapagechage'])
+      
       }
     
 };
@@ -131,11 +209,11 @@ export default {
     margin-top: 20px;
     width: 1264px;
     height: 212px;
+    margin-bottom: 200px;
     //   border: 1px solid #000;
     .order_list_center {
       width: 100%;
       height: 212.8px;
-      padding: 30px 0;
       border: rgb(235, 237, 240) solid 1px;
       background: #fff;
     }
