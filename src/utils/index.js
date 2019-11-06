@@ -1,14 +1,15 @@
 import axios from 'axios';
+import constant from '@/utils/constant'
 export function fetch(api, callback) {
-    let res = localStorage.getItem('login')
+    // let res = localStorage.getItem('login')
 
     // 显示加载中
     axios({
         method: "GET",
-        // url: constant.baseUrl + api,
-        headers: {
-            token: JSON.parse(res).token  // token传递给后端
-        }
+        url: constant.baseUrl + api,
+        // headers: {
+        //     token: JSON.parse(res).token  // token传递给后端
+        // }
     }).then(res => {
         let data = null
         if (res.data.err === 0) {

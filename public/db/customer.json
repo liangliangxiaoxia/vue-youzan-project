@@ -1,0 +1,101 @@
+{
+    "err":0,
+    "msg":"success",
+     "data":[{
+         "name":"1",
+         "integral":0,
+         "balance":0,
+         "buy":0,
+         "grand":0,
+         "date":"2019-11-06"
+     },
+     {
+         "name":"2",
+         "integral":1,
+         "balance":1,
+         "buy":1,
+         "grand":1,
+         "date":"2019-11-06"
+    },
+    {
+        "name":"3",
+        "integral":3,
+        "balance":3,
+        "buy":3,
+        "grand":3,
+        "date":"2019-11-06"
+   },
+   {
+        "name":"4",
+        "integral":4,
+        "balance":4,
+        "buy":4,
+        "grand":4,
+        "date":"2019-11-06"
+  },
+  {
+        "name":"5",
+        "integral":5,
+        "balance":5,
+        "buy":5,
+        "grand":5,
+        "date":"2019-11-06"
+ },
+ {
+        "name":"6",
+        "integral":6,
+        "balance":6,
+        "buy":6,
+        "grand":6,
+        "date":"2019-11-06"
+},
+{
+        "name":"7",
+        "integral":7,
+        "balance":7,
+        "buy":7,
+        "grand":7,
+        "date":"2019-11-06"
+},
+{
+        "name":"8",
+        "integral":8,
+        "balance":8,
+        "buy":8,
+        "grand":8,
+        "date":"2019-11-06"
+},
+{
+        "name":"9",
+        "integral":9,
+        "balance":9,
+        "buy":9,
+        "grand":9,
+        "date":"2019-11-06"
+},
+{
+        "name":"10",
+        "integral":10,
+        "balance":10,
+        "buy":10,
+        "grand":10,
+        "date":"2019-11-06"
+},
+{
+        "name":"11",
+        "integral":11,
+        "balance":11,
+        "buy":11,
+        "grand":11,
+        "date":"2019-11-06"
+},
+{
+        "name":"12",
+        "integral":12,
+        "balance":12,
+        "buy":12,
+        "grand":12,
+        "date":"2019-11-06"
+}]
+}
+

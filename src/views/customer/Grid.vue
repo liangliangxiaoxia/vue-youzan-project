@@ -73,7 +73,7 @@ export default {
         height:30px;
         line-height: 30px;
         width:164px;
-        background: red;
+        background: rgb(247,248,250);
     }
   }
   .row-bg {

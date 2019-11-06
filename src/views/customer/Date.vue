@@ -13,7 +13,7 @@
   <el-col :span="6">
       <div class="grid-content bg-purple">
                <div class="block">
-                  <el-date-picker v-model="value1" type="date" placeholder="结束日期"></el-date-picker>
+                  <el-date-picker v-model="value2" type="date" placeholder="结束日期"></el-date-picker>
                </div>
       </div>
   </el-col>
@@ -24,7 +24,7 @@
           <div class="grid-content bg-purple">
                <div class="block">
                   <span class="demonstration">成为客户时间: </span>
-                  <el-date-picker v-model="value1" type="date" placeholder="开始日期"></el-date-picker>
+                  <el-date-picker v-model="value3" type="date" placeholder="开始日期"></el-date-picker>
                </div>
           </div>
    </el-col>
@@ -32,7 +32,7 @@
   <el-col :span="6">
       <div class="grid-content bg-purple">
                <div class="block">
-                  <el-date-picker v-model="value1" type="date" placeholder="结束日期"></el-date-picker>
+                  <el-date-picker v-model="value4" type="date" placeholder="结束日期"></el-date-picker>
                </div>
       </div>
   </el-col>
@@ -43,7 +43,7 @@
           <div class="grid-content bg-purple">
                <div class="block">
                   <span class="demonstration">成为会员时间: </span>
-                  <el-date-picker v-model="value1" type="date" placeholder="开始日期"></el-date-picker>
+                  <el-date-picker v-model="value5" type="date" placeholder="开始日期"></el-date-picker>
                </div>
           </div>
    </el-col>
@@ -51,7 +51,7 @@
   <el-col :span="6">
       <div class="grid-content bg-purple">
                <div class="block">
-                  <el-date-picker v-model="value1" type="date" placeholder="结束日期"></el-date-picker>
+                  <el-date-picker v-model="value6" type="date" placeholder="结束日期"></el-date-picker>
                </div>
       </div>
   </el-col>
@@ -65,7 +65,7 @@
         <el-col :span="20" style="height:50px;line-height:50px;margin-left:42px;">
       <div class="sub-title" style=" float:left;">关键字:</div>
          <el-autocomplete class="inline-input" v-model="state1" :fetch-suggestions="querySearch" placeholder="手机号/微信昵称/姓名"
-      @select="handleSelect" style="width:215px;"></el-autocomplete>
+      @select="handleSelect" style="width:210px;"></el-autocomplete>
        </el-col>
    </el-row>
       </div>
@@ -85,33 +85,13 @@ export default {
         disabledDate(time) {
           return time.getTime() > Date.now();
         },
-        shortcuts: [
-          {
-            text: "今天",
-            onClick(picker) {
-              picker.$emit("pick", new Date());
-            }
-          },
-          {
-            text: "昨天",
-            onClick(picker) {
-              const date = new Date();
-              date.setTime(date.getTime() - 3600 * 1000 * 24);
-              picker.$emit("pick", date);
-            }
-          },
-          {
-            text: "一周前",
-            onClick(picker) {
-              const date = new Date();
-              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit("pick", date);
-            }
-          }
-        ]
       },
       value1: "",
-      value2: ""
+      value2: "",
+      value3: "",
+      value4: "",
+      value5: "",
+      value6: "",
     };
   },
   methods: {
@@ -143,6 +123,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .el-row {
   margin-bottom: 20px;

@@ -8,17 +8,24 @@
   <Grid></Grid>
   <hr>
   <Date></Date>
+  <Dropdown></Dropdown>
+  <Footer></Footer>
 </div>
 </template>
 <script>
 import Addcustomer from "./Addcustomer.vue"
 import Grid from "./Grid.vue"
 import Date from "./Date.vue"
+import Dropdown from "./Dropdown.vue"
+import Footer from './Footer.vue'
+
 export default {
     components:{
       Addcustomer,
       Grid,
-      Date
+      Date,
+      Dropdown,
+      Footer
     }
 }
 </script>

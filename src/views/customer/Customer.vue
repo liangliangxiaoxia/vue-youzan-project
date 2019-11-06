@@ -5,9 +5,9 @@
    <el-container>
      <el-header><Header></Header></el-header>
      <el-main><Main></Main></el-main>
-     <el-footer>Footer</el-footer>
+     <el-footer></el-footer>
    </el-container>
-   
+    
 </div>
 </template>
 
@@ -16,12 +16,14 @@ import LeftNav from '@/components/LeftNav.vue'
 import Header from './Header.vue'
 import Left from './Left.vue'
 import Main from './Main.vue'
+
+
 export default {
     components:{
         LeftNav,
         Header,
         Left,
-        Main
+        Main,
     }
 }
 </script>
