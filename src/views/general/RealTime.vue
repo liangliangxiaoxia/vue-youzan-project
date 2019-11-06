@@ -18,11 +18,11 @@
     </div>
 
     <div class="zent-layout-grid">
-      <div class="left">
+      <div class="left" v-if='realtimeArr && realtimeArr[0]'>
           <RealFrom :item="realtimeArr[0]"></RealFrom>
       </div>
 
-      <div class="right">
+      <div class="right" v-if='realtimeArr && realtimeArr[1]'>
           <RealFrom :item="realtimeArr[1]"></RealFrom>  
       </div>
     </div>
@@ -43,15 +43,16 @@ export default {
         ...mapActions(['getRealtime'])
     },
     mounted(){
-        this.getRealtime()
-        console.log(this.realtimeArr)
+        if(this.realtimeArr.length === 0){
+          this.getRealtime()
+        }
     },
 };
 </script>
 
 <style lang="scss" scoped>
 .real_time {
-  width: 1036px;
+  width: 1000px;
   height: 283px;
   background: #fff;
   padding: 20px 20px;

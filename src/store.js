@@ -8,12 +8,16 @@ const store = new Vuex.Store({
   state: {
     //概况 的 实时概况
      realtimeArr:[],
+     mindArr:[]
   },
   //更改数据
   mutations: {
     updateRealtime(state,payload){
         state.realtimeArr = payload;
-    }
+    },
+    updateMindArr(state,payload){
+      state.mindArr = payload;
+  }
   },
   //请求数据
   actions: {
@@ -22,7 +26,13 @@ const store = new Vuex.Store({
            console.log(data)
            store.commit('updateRealtime',data)
         })
-     }
+     },
+     getMind(store){
+      fetch('/db/mind.json',(data)=>{
+         console.log(data)
+         store.commit('updateMindArr',data)
+      })
+   },
   }
 })
 

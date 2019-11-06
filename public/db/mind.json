@@ -1,0 +1,346 @@
+{
+    "err": 0,
+    "msg": "success",
+    "data": [
+        {
+            "title": "全部事项",
+            "data": [
+                {
+                    "name": "代发货订单",
+                    "num": 0
+                },
+                {
+                    "name": "待回复客户数",
+                    "num": 0
+                },
+                {
+                    "name": "近期滞销商品",
+                    "num": 0
+                },
+                {
+                    "name": "待退款订单",
+                    "num": 0
+                },
+                {
+                    "name": "排队中客户数",
+                    "num": 0
+                },
+                {
+                    "name": "库存过少商品",
+                    "num": 0
+                }
+            ],
+            "data2": [
+                {    
+                    "id":"101",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未创建客户分群",
+                    "b": "通过对客户行为、属性的分析，更好的针对不同客户进行运营管理",
+                    "c": "立即创建"
+                },
+                {
+                    "id":"102",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未设置会员等级",
+                    "b": "建立完善的会员成长体系，帮助您更好的维护客户关系及活跃度",
+                    "c": "立即设置"
+                },
+                {
+                    "id":"103",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未开启会员储值",
+                    "b": "帮助您提升会员忠诚度、增强粘性，持续营销会员，牢牢锁住会员",
+                    "c": "立即开启"
+                },
+                {
+                    "id":"104",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未填写客服电话",
+                    "b": "填写后，可以帮助买家快速联系到您",
+                    "c": "立即优化"
+                },
+                {
+                    "id":"105",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未填写店铺地图定位",
+                    "b": "填写后，买家可以通过地图直观了解到您的店铺位置",
+                    "c": "立即优化"
+                },
+                {
+                    "id":"106",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未完成店铺认证",
+                    "b": "完成认证后可使用转账、提现等功能",
+                    "c": "立即认证"
+                },
+                {
+                    "id":"107",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未完成微信支付实名认证",
+                    "b": "微信支付实名认证后可正常使用微信支付能力",
+                    "c": "立即认证"
+                },
+                {
+                    "id":"108",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未加入有赞担保",
+                    "b": "加入后，以有赞平台信用担保背书为核心，解决社交电商信任问题",
+                    "c": "立即优化"
+                },
+                {
+                    "id":"109",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未授权绑定微信小程序",
+                    "b": "",
+                    "c": "立即处理"
+                },
+                {
+                    "id":"110",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未订购三方应用",
+                    "b": "您可在应用市场获取丰富的营销工具",
+                    "c": "立即前往"
+                },
+                {
+                    "id":"111",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未入驻有赞精选",
+                    "b": "入驻后，将免费为你的商品带来曝光和流量",
+                    "c": "立即入驻"
+                },
+                {
+                    "id":"112",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未绑定微信公众号",
+                    "b": "绑定后，在这管理你的公众号，有赞提供比微信后台更强大的功能",
+                    "c": "立即绑定"
+                },
+                {
+                    "id":"113",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未开启分销员",
+                    "b": "开启后，轻松招募分销员，成功推广给奖励，裂变传播拉新客",
+                    "c": "立即开启"
+                },
+                {
+                    "id":"114",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未入驻有赞供货商",
+                    "b": "入驻后，让更多人帮你卖货，快速获取订单，建立分销网络",
+                    "c": "立即入驻"
+                },
+                {
+                    "id":"115",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "分销市场补充货源",
+                    "b": "丰富商品品类可更好的拓展获客渠道",
+                    "c": "立即选货"
+                }
+            ]
+        },
+        {
+            "title": "店铺基础",
+            "data": [
+                {
+                    "id":"201",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未填写客服电话",
+                    "b": "填写后，可以帮助买家快速联系到您",
+                    "c": "立即优化"
+                },
+                {
+                    "id":"202",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未填写店铺地图定位",
+                    "b": "填写后，买家可以通过地图直观了解到您的店铺位置",
+                    "c": "立即优化"
+                },
+                {
+                    "id":"203",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未完成店铺认证",
+                    "b": "完成认证后可使用转账、提现等功能",
+                    "c": "立即认证"
+                },
+                {
+                    "id":"204",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未完成微信支付实名认证",
+                    "b": "微信支付实名认证后可正常使用微信支付能力",
+                    "c": "立即认证"
+                },
+                {
+                    "id":"205",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未加入有赞担保",
+                    "b": "加入后，以有赞平台信用担保背书为核心，解决社交电商信任问题",
+                    "c": "立即优化"
+                },
+                {
+                    "id":"206",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未授权绑定微信小程序 ",
+                    "b": "",
+                    "c": "立即处理"
+                },
+                {
+                    "id":"207",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未订购三方应用",
+                    "b": "您可在应用市场获取丰富的营销工具",
+                    "c": "立即前往"
+                },
+                {
+                    "id":"208",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未入驻有赞精选 ",
+                    "b": "入驻后，将免费为你的商品带来曝光和流量",
+                    "c": "立即入驻"
+                },
+                {
+                    "id":"209",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未绑定微信公众号 ",
+                    "b": "绑定后，在这管理你的公众号，有赞提供比微信后台更强大的功能",
+                    "c": "立即绑定"
+                },
+                {
+                    "id":"210",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未开启分销员",
+                    "b": "开启后，轻松招募分销员，成功推广给奖励，裂变传播拉新客",
+                    "c": "立即开启"
+                },
+                {
+                    "id":"211",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "未入驻有赞供货商 ",
+                    "b": "入驻后，让更多人帮你卖货，快速获取订单，建立分销网络",
+                    "c": "立即入驻"
+                }
+            ]
+        },
+        {
+            "title": "商品体验",
+            "data": [
+                {
+                    "id":"301",
+                    "i": "//img.yzcdn.cn/wsc-pc-v4/icon/blue-flag.png",
+                    "a": "分销市场补充货源 ",
+                    "b": "丰富商品品类可更好的拓展获客渠道",
+                    "c": "立即选货"
+                }
+            ]
+        },
+        {
+            "title": "物流体验",
+            "icon": "https://img.yzcdn.cn/wsc-pc-v4/icon/smile.png",
+            "name": "你已完成物流体验的所有任务",
+            "nameNo": "看推荐资讯，助力店铺经营",
+            "gengduo": "更多内容",
+            "dian": "...",
+            "data": [
+                {
+                    "id":"401",
+                    "a": "少林弟子弃武从商： 借 40 万创...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-1.png"
+                },
+                {
+                    "id":"402",
+                    "a": "对话快手主播 8 小时！1 天卖 120 ...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-2.png"
+                },
+                {
+                    "id":"403",
+                    "a": "抽卡游戏成网红项目，2 家门店、...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-3.png"
+                }
+            ]
+        },
+        {
+            "title": "售后体验",
+            "icon": "https://img.yzcdn.cn/wsc-pc-v4/icon/smile.png",
+            "name": "你已完成售后体验的所有任务",
+            "nameNo": "看推荐资讯，助力店铺经营",
+            "gengduo": "更多内容",
+            "dian": "...",
+            "data": [
+                {
+                    "id":"501",
+                    "a": "少林弟子弃武从商： 借 40 万创...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-1.png"
+                },
+                {
+                    "id":"502",
+                    "a": "对话快手主播 8 小时！1 天卖 120 ...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-2.png"
+                },
+                {
+                    "id":"503",
+                    "a": "抽卡游戏成网红项目，2 家门店、...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-3.png"
+                }
+            ]
+        },
+        {
+            "title": "服务体验",
+            "icon": "https://img.yzcdn.cn/wsc-pc-v4/icon/smile.png",
+            "name": "你已完成服务体验的所有任务",
+            "nameNo": "看推荐资讯，助力店铺经营",
+            "gengduo": "更多内容",
+            "dian": "...",
+            "data": [
+                {
+                    "id":"601",
+                    "a": "少林弟子弃武从商： 借 40 万创...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-1.png"
+                },
+                {
+                    "id":"602",
+                    "a": "对话快手主播 8 小时！1 天卖 120 ...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-2.png"
+                },
+                {
+                    "id":"603",
+                    "a": "抽卡游戏成网红项目，2 家门店、...",
+                    "b": "立即查看",
+                    "c": "//img.yzcdn.cn/wsc-pc-v4/icon/cms-pic-3.png"
+                }
+            ]
+        },
+        {
+            "title": "流量表现",
+            "data": [
+                {
+                    "id":"701",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未创建客户分群",
+                    "b": "通过对客户行为、属性的分析，更好的针对不同客户进行运营管理",
+                    "c": "立即创建"
+                },
+                {
+                    "id":"702",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未设置会员等级",
+                    "b": "建立完善的会员成长体系，帮助您更好的维护客户关系及活跃度",
+                    "c": "立即设置"
+                },
+                {
+                    "id":"703",
+                    "i": "http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png",
+                    "a": "未开启会员储值 ",
+                    "b": "帮助您提升会员忠诚度、增强粘性，持续营销会员，牢牢锁住会员",
+                    "c": "立即开启"
+                }
+            ]
+        }
+    ]
+}

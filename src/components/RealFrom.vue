@@ -1,6 +1,7 @@
 <template>
     <div class="real_from">
-        <el-row :gutter="20" v-if="item.type==0">
+      <div v-if="item.type==0">
+        <el-row :gutter="20" >
           <el-col :span="12" v-for="(ele1,idx1) in item.left" :key="idx1">
             <div class="grid-content bg-purple box">
               <p v-text="ele1.a">支付订单数</p>
@@ -15,8 +16,10 @@
         </el-col>
         
         </el-row>
+      </div>
         
-        <el-row :gutter="20" v-else>
+        <div v-else>
+           <el-row :gutter="20" >
           <el-col :span="12" v-for="(ele2,idx2) in item.right" :key="idx2">
             <div class="grid-content bg-purple box2">
               <p v-text="ele2.a">支付订单数</p>
@@ -26,6 +29,8 @@
             </div>
            </el-col>
         </el-row>
+        </div>
+        
     </div>
 </template>
 
