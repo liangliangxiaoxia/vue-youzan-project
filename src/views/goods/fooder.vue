@@ -15,10 +15,10 @@ export default {
     .Footer{
         height: 100px;
         background: rgb(247, 248, 250);
-        position: fixed;
-        left: 92px;
-        right: 0;
-        bottom: 0;
+        // position: fixed;
+        // left: 92px;
+        // right: 0;
+        // bottom: 0;
         text-align: center;
         line-height: 100px;
         font-size: 24px;
