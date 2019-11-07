@@ -15,6 +15,10 @@ const store = new Vuex.Store({
     num: 0,
     msg: "123",
     userArr: [],
+    //分页
+    ordersArr: [], //所有列表
+    ordersArr2: [], //表格分页
+    ordersArr3:[]  //跳页
     // newGoodArr: [],
     // num: 0,
   },
@@ -63,6 +67,25 @@ const store = new Vuex.Store({
       // })
 
     },
+    updataOrderArr(state, payload) {
+      if(payload.list){
+        state.ordersArr = payload.list
+      }
+      let page = payload.page || 5
+      let list = state.ordersArr
+      state.ordersArr2 = list.slice(0,page)
+    },
+
+
+    updatapagechage(state, payload) {
+      state.ordersArr2=[];
+      let page=payload.page
+      console.log("当前页",page)
+      state.ordersArr2=state.ordersArr.slice((page-1)*5, page*5)
+        
+      console.log(state.ordersArr2)
+     
+    }
   },
   //请求数据
   actions: {
@@ -90,9 +113,18 @@ const store = new Vuex.Store({
         store.commit("updataeuserArr", data)
       })
     },
-    //分页
-
-  }
+    getorderdetails(store) {
+      fetch('/db/ordersList.json', data => {
+        // console.log(data)
+        // console.log("新的数据",pagingArr)
+        let payload = {
+          page:5,
+          list:data
+        }
+        store.commit('updataOrderArr', payload)
+      })
+    }
+  },
 })
 
 export default store

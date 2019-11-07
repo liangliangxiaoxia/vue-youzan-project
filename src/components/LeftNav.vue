@@ -26,6 +26,7 @@ export default {};
 
 <style lang="scss" scoped>
 .left-nav {
+  z-index: 999999;
   height: 100%;
   width: 92px;
   background: #444;

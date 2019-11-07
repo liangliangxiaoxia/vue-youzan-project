@@ -32,9 +32,9 @@ element-ui ui框架
 创建时间：2019/11/04/21:23
 
 工作分配：{
-    伍：general/login(概况/登录),主分支：master
-    卢：goods（商品）,分支：fini-lu
-    彭：order（订单）,分支：
+    伍：general/login(概况/登录),
+    卢：goods（商品）,
+    彭：order（订单）,
     江：customer（客户）
 }
 
