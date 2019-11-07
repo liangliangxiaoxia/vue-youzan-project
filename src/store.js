@@ -18,9 +18,9 @@ const store = new Vuex.Store({
     //分页
     ordersArr: [], //所有列表
     ordersArr2: [], //表格分页
-    ordersArr3:[]  //跳页
-    // newGoodArr: [],
-    // num: 0,
+    ordersArr3:[],  //跳页
+    // 用户
+    unArr:[]
   },
   //更改数据
   mutations: {
@@ -85,6 +85,10 @@ const store = new Vuex.Store({
         
       console.log(state.ordersArr2)
      
+    },
+
+    upUnArr(state,payload){
+       state.unArr = payload;
     }
   },
   //请求数据
@@ -123,8 +127,15 @@ const store = new Vuex.Store({
         }
         store.commit('updataOrderArr', payload)
       })
+    },
+    // 获取用户
+    getUn(store){
+       fetch('/db/un.json',data=>{
+          // console.log(data);
+          store.commit('upUnArr',data);
+       })
     }
-  },
+  }
 })
 
 export default store

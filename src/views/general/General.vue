@@ -23,6 +23,7 @@
       <!-- 右边 -->
       <Aside></Aside>
     </div>
+
     <!-- 底部 -->
     <div class="footer">
         <div><img :src="imgs.youzanicon" alt=""></div>
@@ -69,6 +70,7 @@ export default {
   background: rgb(247, 248, 250);
   height: 100%;
   overflow: auto;
+  width:100%;
   .main{
     padding-top:20px;
     padding-left:20px;

@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .real_time {
-  width: 1000px;
+  width: 1036px;
   height: 283px;
   background: #fff;
   padding: 20px 20px;

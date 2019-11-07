@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 .recommend{
     margin-top:20px;
-    width:1000px;
+    width: 1036px;
     height:198px;
     background:#fff;
 }

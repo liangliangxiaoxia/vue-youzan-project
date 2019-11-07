@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 .study{
     margin-top:20px;
-    width:1000px;
+    width: 1036px;
     height:221px;
     background:#fff;
 }

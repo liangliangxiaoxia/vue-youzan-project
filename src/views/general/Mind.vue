@@ -220,12 +220,12 @@ export default {
 <style lang="scss" scoped>
 .mind {
   margin-top: 20px;
-  width: 1000px;
+  width: 1036px;
   height: 340px;
   background: #fff;
   padding: 20px;
   .left {
-    width: 200px;
+    width: 233px;
     height: 300px;
     border-right: 1px solid #e5e5e5;
     float: left;

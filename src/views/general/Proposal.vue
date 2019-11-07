@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 .proposal{
     margin-top:20px;
-    width:1000px;
+    width: 1036px;
     height:193px;
     background:#fff;
 }

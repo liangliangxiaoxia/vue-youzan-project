@@ -150,10 +150,10 @@ export default {};
 
 <style lang="scss" scoped>
 .aside {
-  width: 220px;
+  width: 231px;
   height: 1726px;
   position: absolute;
-  right: 0;
+  right: -50px;
   top: 20px;
   .box {
     margin-bottom: 20px;
@@ -278,7 +278,7 @@ export default {};
     width: 100%;
     height: 196px;
     background: #fff;
-    padding:12px;
+    padding:16px;
     > div:nth-child(1){
          margin-bottom:14px;
     }
@@ -293,7 +293,7 @@ export default {};
     width: 100%;
     height: 196px;
     background: #fff;
-    padding:12px;
+    padding:16px;
     .d40{
         color:#D40000;
     }
@@ -310,7 +310,7 @@ export default {};
     width: 100%;
     height: 172px;
     background: #fff;
-    padding:12px;
+    padding:16px;
     > div:nth-child(1){
         margin-bottom:14px;
     }
