@@ -116,7 +116,7 @@ export default {
     background:#fff;
     padding:20px;
     > .el-row {
-    height: 80px;
+    height: 60px;
     width: 100%;
     > .el-col {
       height: 40px;
