@@ -44,98 +44,114 @@
    </el-col>
   <el-col :span="5" style="border:1px solid rgb(193,193,193);">
       <div class="grid-content bg-purple">
-        <div class="bar" style="height:40px;line-height:40px;"><span>设置权益卡</span> <span>加标签</span> <span  @click="remove">跟多</span></div>
+        <div class="bar" style="height:40px;line-height:40px;"><span>设置权益卡</span> <span>加标签</span> 
+                <el-button size="mini" type="danger" @click="remove(index,item)">删除</el-button>
+        </div>
       </div>
-      </el-col>  
+  </el-col>  
 </el-row>
 </div>
        <div style="height:40px;"></div>
             <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" 
-            :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="1" layout="total, sizes, prev, pager, next, jumper"
-         :total="400"></el-pagination>
+            :current-page="currentPage4" :page-sizes="[5]" :page-size="1" layout="total, sizes, prev, pager, next, jumper"
+         :total="12"></el-pagination>
 
 </div>   
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex"
+import { mapState, mapActions, mapMutations } from "vuex";
 
-  export default {
-    //   props:["item"],
-    data() {
-      return {
-        checked: false,
-         currentPage1: 5,
-         currentPage2: 5,
-         currentPage3: 5,
-         currentPage4: 4,
-         page:1,
+export default {
+  //   props:["item"],
+  data() {
+    return {
+      checked: false,
+      currentPage1: 5,
+      currentPage2: 5,
+      currentPage3: 5,
+      currentPage4: 4,
+      page: 1,
+      
+    };
+  },
+  computed: {
+    ...mapState(["newGoodArr", "num", "newGoodArr2"])
+  },
+  mounted() {
+    this.getUser();
+    // this.updateNewGoodArr()
+  },
+  methods: {
+    toggleSelection(rows) {
+      if (rows) {
+        rows.forEach(row => {
+          this.$refs.multipleTable.toggleRowSelection(row);
+        });
+      } else {
+        this.$refs.multipleTable.clearSelection();
       }
-
     },
-    computed:{
-      ...mapState(["newGoodArr","num"])
+    ...mapActions(["getUser"]),
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
     },
-    mounted(){
-        this.getUser()
-        // this.updateNewGoodArr()
+    handleCurrentChange(val) {
+      console.log(this.page);
+      this.page = val;
     },
-     methods: {
-      toggleSelection(rows) {
-        if (rows) {
-          rows.forEach(row => {
-            this.$refs.multipleTable.toggleRowSelection(row);
-          });
-        } else {
-          this.$refs.multipleTable.clearSelection();
-        }
-      },
-      ...mapActions(["getUser"]),
-          handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-        handleCurrentChange(val) {
-        console.log(this.page);
-        this.page=val;
-      },
-      ...mapMutations(["updateNewGoodArr"]),
-      //删除一条客户记录
-    remove(){
-
-            console.log('删除')
-            // 构造一个payload，type表示是删除一个商品
-            this.updateNewGoodArr(this.newGoodArr[0][0].name)
-    }
+    ...mapMutations(["updateNewGoodArr"]),
+    // 删除
+    remove(index) {
+      this.$confirm(`确定删除吗?`, "警告", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "error"
+      }).then(() => {
+         this.newGoodArr.splice(index,1);
+        // console.log(newGoodArr);
+        // for (let i = 0; i < this.newGoodArr.length; i++) {
+         
+        //   for (let j = 0; j < this.newGoodArr[i].length; j++) {
+        //     console.log(typeof(item.name));
+        //      console.log(typeof(this.newGoodArr[i][j].name))
+        //     if (item.name === this.newGoodArr[i][j].name) {
+        //       this.newGoodArr.splice([j], 1);
+        //       return;
+        //     }
+        //   }
+        // }
+      });
     }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+.el-row {
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
   }
-  .el-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    // background: #99a9bf;
-  }
-  .bg-purple {
-    // background: #d3dce6;
-  }
-  .bg-purple-light {
-    // background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    // background-color: #f9fafc;
-  }
-
+}
+.el-col {
+  border-radius: 4px;
+}
+.bg-purple-dark {
+  // background: #99a9bf;
+}
+.bg-purple {
+  // background: #d3dce6;
+}
+.bg-purple-light {
+  // background: #e5e9f2;
+}
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+.row-bg {
+  padding: 10px 0;
+  // background-color: #f9fafc;
+}
 </style>
