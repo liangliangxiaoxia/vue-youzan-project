@@ -2,12 +2,12 @@
   <div>
     <!-- 1 -->
     <el-row type="flex" class="row-bg" align="middle" >
-  <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单搜索:</span> <el-select v-model="value" placeholder="请选择"  style="width:184px;height:32px;margin-left:10px;padding-right:10px;">
+  <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单搜索:</span> <el-select v-model="value1" placeholder="请选择"  style="width:184px;height:32px;margin-left:10px;padding-right:10px;">
     <el-option
       v-for="item in orders.OrderSearch"
       :key="item.value"
       :label="item.label"
-      :value="item.value1">
+      :value="item.value">
     </el-option>
   </el-select></div></el-col>
   <el-col :span="5"><div class="grid-content bg-purple"><el-input v-model="input"></el-input></div></el-col>
@@ -17,7 +17,7 @@
  <el-row type="flex" class="row-bg" >
   <el-col :span="5.5" ><div class="grid-content bg-purple-light"><div class="block"><span class="font_size_chage">下单时间:</span>
     <el-date-picker style="width:201px;height:32px;margin-left:10px;padding-right:10px"
-      v-model="value1"
+      v-model="value9"
       type="datetime"
       placeholder="开始日期">
     </el-date-picker>
@@ -27,7 +27,7 @@
 
   <el-col :span="5"><div class="grid-content bg-purple"><div class="block">
     <el-date-picker
-      v-model="value3"
+      v-model="value10"
       type="datetime"
       placeholder="结束日期"
       default-time="12:00:00">
@@ -41,15 +41,15 @@
 <!-- 3 -->
 <el-row type="flex" class="row-bg" >
 <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">商品名称:</span> <el-input style="width:184px;height:32px;margin-left:10px;padding-right:10px" v-model="input" placeholder="请输入"></el-input></div></el-col>
-<el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单类型:</span> <el-select v-model="value" placeholder="请选择">
+<el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单类型:</span> <el-select v-model="value2" placeholder="请选择">
     <el-option
       v-for="item in orders.OrderType"
-      :key="item.value"
+      :key="item.value2"
       :label="item.label"
       :value="item.value">
     </el-option>
   </el-select></div></el-col>
- <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">维权状态:</span> <el-select v-model="value" placeholder="请选择">
+ <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">维权状态:</span> <el-select v-model="value3" placeholder="请选择">
     <el-option
       v-for="item in orders.activistState"
       :key="item.value"
@@ -62,7 +62,7 @@
 
 <!-- 4 -->
 <el-row type="flex" class="row-bg" >
-<el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单状态:</span> <el-select v-model="value" placeholder="请选择" style="width:184px;height:32px;margin-left:10px;padding-right:10px">
+<el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单状态:</span> <el-select v-model="value4" placeholder="请选择" style="width:184px;height:32px;margin-left:10px;padding-right:10px">
     <el-option
       v-for="item in orders.OrderStatus"
       :key="item.value"
@@ -70,7 +70,7 @@
       :value="item.value">
     </el-option>
   </el-select></div></el-col>
- <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">配送方式:</span> <el-select v-model="value" placeholder="请选择">
+ <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">配送方式:</span> <el-select v-model="value5" placeholder="请选择">
     <el-option
       v-for="item in orders.distribution"
       :key="item.value"
@@ -78,7 +78,7 @@
       :value="item.value">
     </el-option>
   </el-select></div></el-col>
-     <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">付款方式:</span> <el-select v-model="value" placeholder="请选择">
+     <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">付款方式:</span> <el-select v-model="value6" placeholder="请选择">
     <el-option
       v-for="item in orders.paymentWay"
       :key="item.value"
@@ -90,7 +90,7 @@
 
 <!-- 5 -->
 <el-row type="flex" class="row-bg" >
-<el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单来源:</span> <el-select v-model="value" placeholder="请选择" style="width:184px;height:32px;margin-left:10px;padding-right:10px">
+<el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">订单来源:</span> <el-select v-model="value7" placeholder="请选择" style="width:184px;height:32px;margin-left:10px;padding-right:10px">
     <el-option
       v-for="item in orders.orderSource"
       :key="item.value"
@@ -98,7 +98,7 @@
       :value="item.value">
     </el-option>
   </el-select></div></el-col>
- <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">是否加星:</span> <el-select v-model="value" placeholder="请选择">
+ <el-col :span="6" ><div class="grid-content bg-purple-light"><span class="font_size_chage">是否加星:</span> <el-select v-model="value8" placeholder="请选择">
     <el-option
       v-for="item in orders.addstar"
       :key="item.value"
@@ -158,6 +158,13 @@ export default {
         value1: '',
         value2: '',
         value3: '',
+        value4: '',
+        value5: '',
+        value6: '',
+        value7: '',
+        value8: '',
+        value9: '',
+        value10: '',
          input: ''
       
     };

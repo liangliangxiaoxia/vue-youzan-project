@@ -122,38 +122,21 @@ export default {
          currentPage1: 5,
         currentPage2: 5,
         currentPage3: 5,
-        currentPage4: 1
+        currentPage4: 1,
+        type:''
       };
     },
     mounted(){
-
+      this.updataOrderArrList({lits:this.ordersArr})
     },
     computed:{
-      ...mapState(['ordersArr2'])
+      ...mapState(['ordersArr2','ordersArr'])
     },
     methods: {
       handleClick(tab) {
-        switch (tab.name) {
-          case "first":
-            this.updataOrderArr({page:5})
-            break;
-            case "second":
-              this.ordersArr2.map((ele,idx)=>{
-               
-                if(ele.orderState === "代付款"){
-                  console.log(idx)
-                  this.ordersArr2.slice(idx,1)
-                }
-                
-              })
-              console.log(this.ordersArr2)
-            
-            break;
-            
-        
-          default:
-            break;
-        }
+        this.type=tab.name
+        console.log(tab.name)
+        this.updatascreeOrder({type:this.type})
        
       },
        deleteRow(index, rows) {
@@ -172,7 +155,7 @@ export default {
         this.updatapagechage({page:page})
         console.log(`当前页: ${val}`);
       },
-      ...mapMutations(['updataOrderArr','updatapagechage'])
+      ...mapMutations(['updataOrderArr','updatapagechage','updatascreeOrder','updataOrderArrList'])
       
       }
     

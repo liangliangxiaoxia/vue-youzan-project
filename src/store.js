@@ -67,24 +67,100 @@ const store = new Vuex.Store({
       // })
 
     },
-    updataOrderArr(state, payload) {
-      if(payload.list){
+     //获取到全部订单的数据
+     updataOrderArrList(state, payload) {
+      if (payload.list) {
         state.ordersArr = payload.list
       }
+      state.ordersArr2=state.ordersArr
+      // console.log(state.ordersArr)
+    },
+    //订单分页
+    updataOrderArr(state, payload) {
+
       let page = payload.page || 5
       let list = state.ordersArr
-      state.ordersArr2 = list.slice(0,page)
+      state.ordersArr2 = list.slice(0, page)
+      console.log(state.ordersArr2)
     },
 
-
+    //订单点击页码跳转
     updatapagechage(state, payload) {
-      state.ordersArr2=[];
-      let page=payload.page
-      console.log("当前页",page)
-      state.ordersArr2=state.ordersArr.slice((page-1)*5, page*5)
-        
-      console.log(state.ordersArr2)
-     
+      state.ordersArr2 = [];
+      let page = payload.page
+      console.log("当前页", page)
+      state.ordersArr2 = state.ordersArr.slice((page - 1) * 5, page * 5)
+      // console.log(state.ordersArr2)
+
+    },
+    //筛选
+   
+    updatascreeOrder(state, payload) {
+      let list = state.ordersArr
+      // let _newArr = null;
+      state.ordersArr2=[]
+      switch (payload.type) {
+        // for (var i = 0;i<list.length;i++){
+
+        // }
+        // 显示全部
+        case "first":
+          state.ordersArr2 = list;
+          //  console.log(state.ordersArr2)
+          break;
+        //代付款
+        case "second":
+         list.map((ele,idx)=>{
+           if(ele.orderState === "代付款"){
+            state.ordersArr2.push(list[idx])
+           }
+         })
+          break; 
+          //代发货
+        case "third":
+            list.map((ele,idx)=>{
+              if(ele.orderState === "代发货"){
+               state.ordersArr2.push(list[idx])
+              }
+            })
+          break;
+            //已发货
+          case "fourth":
+              list.map((ele,idx)=>{
+                if(ele.orderState === "已发货"){
+                 state.ordersArr2.push(list[idx])
+                }
+              })
+          break;
+          //已完成
+          case "sixth":
+              list.map((ele,idx)=>{
+                if(ele.orderState === "已完成"){
+                 state.ordersArr2.push(list[idx])
+                }
+              })
+          break;
+          //已关闭
+          case "seventh":
+              list.map((ele,idx)=>{
+                if(ele.orderState === "已关闭"){
+                 state.ordersArr2.push(list[idx])
+                }
+              })
+          break;
+           //退款中
+           case "eighth":
+              list.map((ele,idx)=>{
+                if(ele.orderState === "退款中"){
+                 state.ordersArr2.push(list[idx])
+                }
+              })
+              break;
+
+        default:
+          
+      }
+
     },
 
     upUnArr(state,payload){
@@ -122,10 +198,10 @@ const store = new Vuex.Store({
         // console.log(data)
         // console.log("新的数据",pagingArr)
         let payload = {
-          page:5,
-          list:data
+          page: 5,
+          list: data
         }
-        store.commit('updataOrderArr', payload)
+        store.commit('updataOrderArrList', payload)
       })
     },
     // 获取用户
