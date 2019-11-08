@@ -177,7 +177,8 @@
             <span v-text="item.serial_number"></span>
           </el-col>
           <el-col :span="2" :offset="3" class>
-            <a href="#">编辑</a>
+            <!-- <a href="#">编辑</a> -->
+            <router-link to='/order'>编辑</router-link>
             <span>&nbsp;|&nbsp;</span>
             <a href="#">推广</a>
           </el-col>

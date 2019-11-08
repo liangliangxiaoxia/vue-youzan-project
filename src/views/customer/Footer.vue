@@ -108,19 +108,7 @@ export default {
         cancelButtonText: "取消",
         type: "error"
       }).then(() => {
-         this.newGoodArr.splice(index,1);
-        // console.log(newGoodArr);
-        // for (let i = 0; i < this.newGoodArr.length; i++) {
-         
-        //   for (let j = 0; j < this.newGoodArr[i].length; j++) {
-        //     console.log(typeof(item.name));
-        //      console.log(typeof(this.newGoodArr[i][j].name))
-        //     if (item.name === this.newGoodArr[i][j].name) {
-        //       this.newGoodArr.splice([j], 1);
-        //       return;
-        //     }
-        //   }
-        // }
+         this.newGoodArr[0].splice(index,1);
       });
     }
   }

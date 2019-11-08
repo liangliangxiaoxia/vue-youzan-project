@@ -18,9 +18,9 @@ const store = new Vuex.Store({
     //分页
     ordersArr: [], //所有列表
     ordersArr2: [], //表格分页
-    ordersArr3:[],  //跳页
+    ordersArr3: [],  //跳页
     // 用户
-    unArr:[]
+    unArr: []
   },
   //更改数据
   mutations: {
@@ -56,23 +56,13 @@ const store = new Vuex.Store({
     },
     updateNewGoodArr(state, payload) {
       console.log(state, payload)
-
-      // // 删除一个订单
-      // state.newGoodArr.map((ele,idx)=>{
-      //   // 用ID来判断商品的唯一性
-      //   if(ele.name === payload.item.name) {
-      //     state.newGoodArr.splice(idx, 1)
-      //     return
-      //   }
-      // })
-
     },
-     //获取到全部订单的数据
-     updataOrderArrList(state, payload) {
+    //获取到全部订单的数据
+    updataOrderArrList(state, payload) {
       if (payload.list) {
         state.ordersArr = payload.list
       }
-      state.ordersArr2=state.ordersArr
+      state.ordersArr2 = state.ordersArr
       // console.log(state.ordersArr)
     },
     //订单分页
@@ -94,11 +84,11 @@ const store = new Vuex.Store({
 
     },
     //筛选
-   
+
     updatascreeOrder(state, payload) {
       let list = state.ordersArr
       // let _newArr = null;
-      state.ordersArr2=[]
+      state.ordersArr2 = []
       switch (payload.type) {
         // for (var i = 0;i<list.length;i++){
 
@@ -110,61 +100,61 @@ const store = new Vuex.Store({
           break;
         //代付款
         case "second":
-         list.map((ele,idx)=>{
-           if(ele.orderState === "代付款"){
-            state.ordersArr2.push(list[idx])
-           }
-         })
-          break; 
-          //代发货
+          list.map((ele, idx) => {
+            if (ele.orderState === "代付款") {
+              state.ordersArr2.push(list[idx])
+            }
+          })
+          break;
+        //代发货
         case "third":
-            list.map((ele,idx)=>{
-              if(ele.orderState === "代发货"){
-               state.ordersArr2.push(list[idx])
-              }
-            })
+          list.map((ele, idx) => {
+            if (ele.orderState === "代发货") {
+              state.ordersArr2.push(list[idx])
+            }
+          })
           break;
-            //已发货
-          case "fourth":
-              list.map((ele,idx)=>{
-                if(ele.orderState === "已发货"){
-                 state.ordersArr2.push(list[idx])
-                }
-              })
+        //已发货
+        case "fourth":
+          list.map((ele, idx) => {
+            if (ele.orderState === "已发货") {
+              state.ordersArr2.push(list[idx])
+            }
+          })
           break;
-          //已完成
-          case "sixth":
-              list.map((ele,idx)=>{
-                if(ele.orderState === "已完成"){
-                 state.ordersArr2.push(list[idx])
-                }
-              })
+        //已完成
+        case "sixth":
+          list.map((ele, idx) => {
+            if (ele.orderState === "已完成") {
+              state.ordersArr2.push(list[idx])
+            }
+          })
           break;
-          //已关闭
-          case "seventh":
-              list.map((ele,idx)=>{
-                if(ele.orderState === "已关闭"){
-                 state.ordersArr2.push(list[idx])
-                }
-              })
+        //已关闭
+        case "seventh":
+          list.map((ele, idx) => {
+            if (ele.orderState === "已关闭") {
+              state.ordersArr2.push(list[idx])
+            }
+          })
           break;
-           //退款中
-           case "eighth":
-              list.map((ele,idx)=>{
-                if(ele.orderState === "退款中"){
-                 state.ordersArr2.push(list[idx])
-                }
-              })
-              break;
+        //退款中
+        case "eighth":
+          list.map((ele, idx) => {
+            if (ele.orderState === "退款中") {
+              state.ordersArr2.push(list[idx])
+            }
+          })
+          break;
 
         default:
-          
+
       }
 
     },
 
-    upUnArr(state,payload){
-       state.unArr = payload;
+    upUnArr(state, payload) {
+      state.unArr = payload;
     }
   },
   //请求数据
@@ -205,11 +195,11 @@ const store = new Vuex.Store({
       })
     },
     // 获取用户
-    getUn(store){
-       fetch('/db/un.json',data=>{
-          // console.log(data);
-          store.commit('upUnArr',data);
-       })
+    getUn(store) {
+      fetch('/db/un.json', data => {
+        // console.log(data);
+        store.commit('upUnArr', data);
+      })
     }
   }
 })
