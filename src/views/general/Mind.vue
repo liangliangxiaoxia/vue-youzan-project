@@ -4,7 +4,9 @@
     <div class="left">
       <h2>智能助手</h2>
       <div class="left_img_box">
-        <img src alt />
+        <div>
+           <el-progress type="circle" :percentage="60" :stroke-width="16" :width="160"></el-progress>
+        </div>
         <span>去处理</span>
       </div>
     </div>
@@ -229,6 +231,26 @@ export default {
     height: 300px;
     border-right: 1px solid #e5e5e5;
     float: left;
+    .left_img_box{
+       > div{
+          padding-left: 30px;
+          margin-top: 40px;
+          margin-bottom:16px;
+       }
+
+       span{
+          display:block;
+          width:90px;
+          height:32px;
+          background:blue;
+          border-radius:5px;
+          text-align:center;
+          line-height:32px;
+          color:#fff;
+          font-size:16px;
+          margin:0 auto;
+       }
+    }
   }
   .right {
     float: right;
